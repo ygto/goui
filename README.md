@@ -1,6 +1,6 @@
 # basic Opengl framework
 
-to learn Opengl in go
+why? because to learn Opengl with go
 
 base libraries
 
