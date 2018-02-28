@@ -11,7 +11,7 @@ base libraries
 **Usage**
 
 
-
+```go
     runtime.LockOSThread()
 	win := window.New(1000, 600)
 	defer win.Destroy()
@@ -33,3 +33,4 @@ base libraries
 	for win.Run() {
 
 	}
+```
