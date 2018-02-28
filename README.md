@@ -12,25 +12,24 @@ base libraries
 
 
 ```go
-    runtime.LockOSThread()
-	win := window.New(1000, 600)
-	defer win.Destroy()
-	win.Title("hello world")
-	win.SetResizable(window.FIXED)
-	win.Fps(20)
-	
-	mainScene := new(scenes.MainScene)
+runtime.LockOSThread()
 
-    triangle := new(objects.Triangle)
-	triangle.Transform = transform.INIT_TRANSFORM
-	triangle.Position = transform.Vector2{100, 100}
-	triangle.SetDrawable(true)
-	
-	
-	mainScene.AddObject(triangle)
+win := window.New(1000, 600)
+defer win.Destroy()
+win.Title("hello world")
+win.SetResizable(window.FIXED)
+win.Fps(20)
 
-	win.ActiveScene(mainScene)
-	for win.Run() {
+mainScene := new(scenes.MainScene)
 
-	}
+triangle := new(objects.Triangle)
+triangle.Transform = transform.INIT_TRANSFORM
+triangle.Position = transform.Vector2{100, 100}
+triangle.SetDrawable(true)
+
+mainScene.AddObject(triangle)
+
+win.ActiveScene(mainScene)
+for win.Run() {
+}
 ```
