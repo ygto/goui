@@ -18,7 +18,7 @@ type Entity struct {
 	actions  map[string]ActionInterface
 }
 
-func newEntity() *Entity {
+func createEntity() *Entity {
 	e := new(Entity)
 	e.actions = make(map[string]ActionInterface)
 	return e

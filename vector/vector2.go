@@ -4,7 +4,7 @@ type Vector2 struct {
 	x, y float32
 }
 
-func NewVector2(x float32, y float32) *Vector2 {
+func CreateVector2(x float32, y float32) *Vector2 {
 	v2 := new(Vector2)
 	v2.x = x
 	v2.y = y

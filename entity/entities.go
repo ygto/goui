@@ -5,20 +5,20 @@ import (
 	"github.com/ygto/goui/color"
 )
 
-func NewRectangle(x float32, y float32, width float32, height float32) *Entity {
-	e := newEntity()
+func CreateRectangle(x float32, y float32, width float32, height float32) *Entity {
+	e := createEntity()
 	e.shape = SHAPE_RECTANGLE
-	e.size = vector.NewVector2(width, height)
-	e.position = vector.NewVector2(x, y)
+	e.size = vector.CreateVector2(width, height)
+	e.position = vector.CreateVector2(x, y)
 	e.SetColor(color.White())
 
 	return e
 }
-func NewCircle(x float32, y float32, radius float32) *Entity {
-	e := newEntity()
+func CreateCircle(x float32, y float32, radius float32) *Entity {
+	e := createEntity()
 	e.shape = SHAPE_CIRCLE
-	e.size = vector.NewVector2(radius, radius)
-	e.position = vector.NewVector2(x, y)
+	e.size = vector.CreateVector2(radius, radius)
+	e.position = vector.CreateVector2(x, y)
 	e.SetColor(color.White())
 
 	return e

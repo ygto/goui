@@ -1,12 +1,3 @@
-# basic Opengl framework
-
-why? because to learn Opengl with go
-
-base libraries
-
-"github.com/go-gl/gl/v4.1-core/gl"
-
-"github.com/go-gl/glfw/v3.2/glfw"
 
 **Usage**
 
@@ -24,10 +15,10 @@ func main() {
 	g.AddScene(mainScene)
 	g.SetActiveScene("main")
 
-	rect := entity.NewRectangle(50, 300, 100, 30)
+	rect := entity.CreateRectangle(50, 300, 100, 30)
 	rect.SetColor(color.CreateColor(255, 0, 0))
-	moveToStart := actions.MoveTo(vector.NewVector2(50, 300), 0.5, nil)
-	moveForward := actions.MoveTo(vector.NewVector2(300, 300), 0.5, func(e *entity.Entity) {
+	moveToStart := actions.MoveTo(vector.CreateVector2(50, 300), 0.5, nil)
+	moveForward := actions.MoveTo(vector.CreateVector2(300, 300), 0.5, func(e *entity.Entity) {
 		moveToStart.Reset()
 		e.AddAction("move", moveToStart)
 	})
@@ -40,10 +31,10 @@ func main() {
 
 	mainScene.AddEntity(rect)
 
-	rect2 := entity.NewRectangle(50, 300, 80, 30)
+	rect2 := entity.CreateRectangle(50, 300, 80, 30)
 	rect2.SetColor(color.CreateColor(0, 0, 255))
-	moveToStart2 := actions.MoveTo(vector.NewVector2(50, 300), 0.2, nil)
-	moveForward2 := actions.MoveTo(vector.NewVector2(300, 300), 0.2, func(e *entity.Entity) {
+	moveToStart2 := actions.MoveTo(vector.CreateVector2(50, 300), 0.2, nil)
+	moveForward2 := actions.MoveTo(vector.CreateVector2(300, 300), 0.2, func(e *entity.Entity) {
 		moveToStart2.Reset()
 		e.AddAction("move", moveToStart2)
 

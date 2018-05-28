@@ -13,7 +13,7 @@ type Window struct {
 
 func NewWindow(w int, h int, title string) (*Window, error) {
 	win := new(Window)
-	win.size = vector.NewVector2(float32(w), float32(h))
+	win.size = vector.CreateVector2(float32(w), float32(h))
 	win.title = title
 	var err error
 	win.window, err = sdl.CreateWindow(title, sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED, int32(win.GetSize().GetX()), int32(win.GetSize().GetY()), sdl.WINDOW_SHOWN)
