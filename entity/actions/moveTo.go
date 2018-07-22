@@ -30,6 +30,9 @@ func (a *moveTo) GetName() string {
 func (a *moveTo) Reset() {
 	a.hasTarget = true
 }
+func (a *moveTo) HasTarget() bool {
+	return a.hasTarget
+}
 func (a *moveTo) Copy() entity.ActionInterface {
 	return MoveTo(a.targetPoint, a.speed, a.targetTrigger)
 }
@@ -39,7 +42,7 @@ func (a *moveTo) SetTrigger(f func(e *entity.Entity)) {
 func (a *moveTo) UpdateAction(e *entity.Entity) {
 
 	//fmt.Println(a.targetPoint.GetX(), a.targetPoint.GetY(), e.GetPosition().GetX(), e.GetPosition().GetY())
-	if !a.hasTarget {
+	if !a.HasTarget() {
 		return
 	}
 	if !a.IsReactedToTarget(e) {
