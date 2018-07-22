@@ -42,7 +42,6 @@ func (s *Scene) addLayerAndEntities(index SceneIndex) error {
 	}
 	s.layers[SceneIndex(index)] = texture
 	s.entities[SceneIndex(index)] = make([]*entity.Entity, 0, 0)
-	fmt.Println(len(s.layers), len(s.entities))
 
 	return nil
 }
