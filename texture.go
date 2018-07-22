@@ -38,9 +38,11 @@ func (t *Texture) setAlpha(alpha uint8) {
 }
 func (t *Texture) setPixel(x int, y int, c *color.Color) {
 	index := (t.size.GetXInt()*y + x) * 4
-	t.pixels[index] = c.R
-	t.pixels[index+1] = c.G
-	t.pixels[index+2] = c.B
+	if index+4 < cap(t.pixels) {
+		t.pixels[index] = c.R
+		t.pixels[index+1] = c.G
+		t.pixels[index+2] = c.B
+	}
 }
 
 func (t *Texture) Clear() {
